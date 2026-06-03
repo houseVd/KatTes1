@@ -3,209 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Espas Sekirite - Kat Idantite</title>
+<title>Eroblack Member Card</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
 body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:Segoe UI, sans-serif;
-    background: radial-gradient(circle, #1e272e 0%, #0f141c 100%);
-    color:#fff;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle,#1e272e 0%,#0f141c 100%);
+color:white;
+padding:20px;
 }
 
 /* LOGIN */
-.login-card{
-    width:360px;
-    padding:35px;
-    border-radius:20px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-    border:1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(14px);
-    box-shadow:0 20px 50px rgba(0,0,0,0.6);
-    text-align:center;
+.login-box{
+width:360px;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 15px 40px rgba(0,0,0,.5);
+text-align:center;
 }
 
-/* CARD CONTAINER */
-.secure-container{
-    display:none;
-    flex-direction:column;
-    align-items:center;
+.login-box h1{
+color:#00d2ff;
+margin-bottom:10px;
 }
 
-/* 🔥 PORTRAIT CARD (KANPE) */
-.residence-card{
-    width:320px;   /* narrower */
-    height:520px;  /* taller = portrait */
-    padding:20px;
-    border-radius:22px;
-
-    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-    border:1px solid rgba(255,255,255,0.12);
-    backdrop-filter: blur(14px);
-
-    box-shadow:0 25px 60px rgba(0,0,0,0.7);
-    position:relative;
-    overflow:hidden;
-
-    display:flex;
-    flex-direction:column;
+.login-box p{
+color:#bfc9d4;
+margin-bottom:20px;
 }
 
-/* watermark */
-.residence-card::before{
-    content:"  •  ";
-    position:absolute;
-    font-size:30px;
-    font-weight:900;
-    opacity:0.06;
-    transform:rotate(-25deg);
-    top:45%;
-    left:5%;
+.login-box input{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+outline:none;
+border-radius:10px;
+background:rgba(255,255,255,.08);
+color:white;
 }
 
-/* HEADER */
-.card-header{
-    text-align:center;
-    border-bottom:1px solid rgba(255,255,255,0.15);
-    padding-bottom:10px;
+.login-box button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+background:#00d2ff;
+color:#000;
+font-weight:bold;
+cursor:pointer;
 }
 
-.card-header h1{
-    font-size:14px;
-    margin:0;
-    color:#00d2ff;
-    text-transform:uppercase;
+.error{
+margin-top:10px;
+color:#ff5e5e;
+display:none;
 }
 
-.card-header h2{
-    font-size:10px;
-    color:#8a99ad;
-    letter-spacing:3px;
+/* CARD */
+.card-container{
+display:none;
 }
 
-/* BODY STACKED (KANPE STYLE) */
-.card-body{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
-    margin-top:15px;
+.member-card{
+width:340px;
+min-height:580px;
+border-radius:24px;
+overflow:hidden;
+background:linear-gradient(135deg,#16202a,#202c38);
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 20px 50px rgba(0,0,0,.6);
 }
 
-/* PHOTO PORTRAIT */
-.user-img{
-    width:140px;
-    height:170px;
-    object-fit:cover;
-    object-position:top;
-    border-radius:14px;
-    border:2px solid rgba(0,210,255,0.5);
+.header{
+padding:20px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,.1);
 }
 
-/* INFO */
-.info{
-    width:100%;
-    text-align:center;
+.header h2{
+color:#00d2ff;
+font-size:18px;
 }
 
-.field-title{
-    font-size:9px;
-    color:#00d2ff;
-    text-transform:uppercase;
-    margin-top:8px;
+.header p{
+font-size:12px;
+color:#a8b3c2;
+margin-top:5px;
 }
 
-.field-value{
-    font-weight:bold;
-    font-size:14px;
-    color:#fff;
-    text-transform:uppercase;
+.content{
+padding:20px;
+text-align:center;
 }
 
-/* FOOTER */
-.card-footer{
-    margin-top:auto;
-    display:flex;
-    justify-content:space-between;
-    border-top:1px solid rgba(255,255,255,0.1);
-    padding-top:10px;
-    font-size:11px;
+.photo{
+width:140px;
+height:170px;
+object-fit:cover;
+border-radius:15px;
+border:2px solid #00d2ff;
 }
 
-.id-number{
-    font-family:monospace;
-    color:#00d2ff;
-    font-weight:bold;
+.label{
+margin-top:12px;
+font-size:11px;
+color:#00d2ff;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.value{
+font-size:14px;
+font-weight:bold;
+padding-bottom:6px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.footer{
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+border-top:1px solid rgba(255,255,255,.1);
+font-size:12px;
+}
+
+.member-id{
+font-family:monospace;
+color:#00d2ff;
+font-weight:bold;
+}
+
+.logout{
+width:100%;
+padding:12px;
+border:none;
+background:#ff4d4d;
+color:white;
+font-weight:bold;
+cursor:pointer;
 }
 </style>
 </head>
-
 <body>
 
 <!-- LOGIN -->
-<div class="login-card" id="loginInterface">
-    <h2>Espas Sekirite</h2>
-    <p>Antre ID + Modpas pou kontinye</p>
+<div class="login-box" id="loginBox">
+<h1>EROBLACK</h1>
+<p>Antre ID ak PIN ou</p>
 
-    <input id="userID" placeholder="ID">
-    <br><br>
-    <input id="userPIN" type="password" placeholder="PIN">
-    <br><br>
+<input type="text" id="userID" placeholder="ID">
+<input type="password" id="userPIN" placeholder="PIN">
 
-    <button onclick="validateUser()">KONEKTE</button>
-    <p id="errorMessage" style="color:red;display:none;">ID oswa modpas pa kòrèk</p>
+<button onclick="login()">KONEKTE</button>
+
+<div class="error" id="errorMsg">
+ID oswa PIN pa kòrèk
+</div>
 </div>
 
-<!-- CARD -->
-<div class="secure-container" id="cardInterface">
+<!-- MEMBER CARD -->
+<div class="card-container" id="cardContainer">
 
-    <div class="residence-card">
+<div class="member-card">
 
-        <div class="card-header">
-            <h1>EROBLACK FONDATION</h1>
-            <h2>CARTE DE RÉSIDENCE</h2>
-        </div>
+<div class="header">
+<h2>EROBLACK FOUNDATION</h2>
+<p>CARTE MEMBRE</p>
+</div>
 
-        <div class="card-body">
-            <img class="user-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0TuHToiNWnU1Rbr8ARH2PyhuQf4bHY0DuzbdB2h2vg&s=10">
+<div class="content">
 
-            <div class="info">
-                <div class="field-title">Nom</div>
-                <div class="field-value">SOUFFRANT</div>
+<img class="photo"
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0TuHToiNWnU1Rbr8ARH2PyhuQf4bHY0DuzbdB2h2vg&s=10">
 
-                <div class="field-title">Prénom</div>
-                <div class="field-value">Robens</div>
+<div class="label">Nom</div>
+<div class="value">SOUFFRANT</div>
 
-                <div class="field-title">Nationalité</div>
-                <div class="field-value">HT</div>
-            </div>
-        </div>
+<div class="label">Prénom</div>
+<div class="value">ROBENS</div>
 
-        <div class="card-footer">
-            <div>Expire: 02/06/2028</div>
-            <div class="id-number">RE-849201-HT</div>
-        </div>
+<div class="label">Nationalité</div>
+<div class="value">HT</div>
 
-    </div>
+<div class="label">Sexe</div>
+<div class="value">M</div>
+
+<div class="label">Adresse</div>
+<div class="value">HAÏTI</div>
+
+<div class="label">Téléphone</div>
+<div class="value">12345678</div>
+
+</div>
+
+<div class="footer">
+<span>Expire: 02/06/2028</span>
+<span class="member-id">MB-849201</span>
+</div>
+
+<button class="logout" onclick="logout()">
+DEKONEKTE
+</button>
+
+</div>
 
 </div>
 
 <script>
-function validateUser(){
-    let id=document.getElementById("userID").value;
-    let pin=document.getElementById("userPIN").value;
+function login(){
 
-    if(id==="40668847@eroblack.com" && pin==="1234"){
-        document.getElementById("loginInterface").style.display="none";
-        document.getElementById("cardInterface").style.display="flex";
-        document.getElementById("errorMessage").style.display="none";
-    } else {
-        document.getElementById("errorMessage").style.display="block";
-    }
+const id=document.getElementById("userID").value;
+const pin=document.getElementById("userPIN").value;
+
+if(id==="40668847@eroblack.com" && pin==="1234"){
+
+document.getElementById("loginBox").style.display="none";
+document.getElementById("cardContainer").style.display="block";
+document.getElementById("errorMsg").style.display="none";
+
+}else{
+
+document.getElementById("errorMsg").style.display="block";
+
+}
+}
+
+function logout(){
+
+document.getElementById("cardContainer").style.display="none";
+document.getElementById("loginBox").style.display="block";
+
+document.getElementById("userID").value="";
+document.getElementById("userPIN").value="";
 }
 </script>
 
