@@ -4,78 +4,74 @@
     <meta charset="UTF-8">
     <title>RROBLACK FONDATION - ID</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background: #e0e0e0; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: #000; }
+        body { font-family: 'Segoe UI', sans-serif; background: #e0e0e0; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
 
-        .login-card { background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #ccc; text-align: center; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #999; border-radius: 3px; }
-        .submit-btn { width: 95%; padding: 10px; background: #333; border: none; color: white; cursor: pointer; font-weight: bold; }
+        .secure-container { display: none; }
 
-        .secure-container { display: none; text-align: center; }
-
-        /* --- STYLE KAT ID OFISYÈL (PLEN NÈT) --- */
+        /* --- STYLE KAT 1000002724.webp --- */
         .residence-card {
-            width: 450px;
-            height: 280px;
-            background: #fff;
-            border-radius: 5px;
-            padding: 20px;
-            border: 1px solid #000;
+            width: 600px;
+            height: 380px;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6eef5 100%);
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid #b0c4de;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            position: relative;
             display: flex;
             gap: 20px;
-            text-align: left;
-            position: relative;
+            color: #2c3e50;
+            overflow: hidden;
         }
 
-        .photo-side { width: 120px; display: flex; flex-direction: column; align-items: center; }
-        .user-img { width: 120px; height: 145px; border: 1px solid #000; background: #f0f0f0; object-fit: cover; }
-        .sign-box { border-bottom: 1px solid #000; margin-top: 15px; width: 100px; font-size: 10px; text-align: center; padding-top: 20px; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1a2a6c; margin-bottom: 15px; }
+        .republique { font-size: 22px; font-weight: bold; color: #1a2a6c; text-transform: uppercase; }
+        
+        .photo-side { width: 180px; }
+        .user-img { width: 170px; height: 210px; border: 1px solid #999; object-fit: cover; }
+        .sign-area { margin-top: 10px; font-family: 'Cursive', sans-serif; font-size: 20px; color: #333; }
 
         .info-side { flex-grow: 1; }
-        .title-top { font-size: 16px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #000; padding-bottom: 5px; }
-        .data-row { margin-bottom: 8px; }
+        .field { margin-bottom: 12px; }
         .label { font-size: 10px; color: #555; text-transform: uppercase; font-weight: bold; }
-        .val { font-size: 14px; font-weight: bold; text-transform: uppercase; }
-
-        .exit-btn { margin-top: 20px; background: #eee; border: 1px solid #999; color: #333; padding: 5px 20px; cursor: pointer; }
+        .val { font-size: 16px; font-weight: bold; text-transform: uppercase; }
+        
+        .footer-id { position: absolute; bottom: 20px; right: 30px; font-size: 20px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="login-card" id="loginInterface">
-        <h2>RROBLACK LOGIN</h2>
+    <!-- Seksyon login rete menm jan an -->
+    <div id="loginInterface">
         <input type="text" id="userID" placeholder="ID">
         <input type="password" id="userPIN" placeholder="PIN">
-        <button class="submit-btn" onclick="validateUser()">CONNEXION</button>
+        <button onclick="validate()">CONNEXION</button>
     </div>
 
-    <div class="secure-container" id="cardInterface">
+    <div class="secure-container" id="cardInterface" style="display: block;">
         <div class="residence-card">
             <div class="photo-side">
-                <img class="user-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0TuHToiNWnU1Rbr8ARH2PyhuQf4bHY0DuzbdB2h2vg&s=10" alt="Profile">
-                <div class="sign-box">FIRMA</div>
+                <div class="republique">RROBLACK FONDATION</div>
+                <img class="user-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0TuHToiNWnU1Rbr8ARH2PyhuQf4bHY0DuzbdB2h2vg&s=10">
+                <div class="sign-area">Robes.S</div>
             </div>
             <div class="info-side">
-                <div class="title-top">RROBLACK FONDATION</div>
-                <div class="data-row"><div class="label">RUN / ROL</div><div class="val">84.920.100-K</div></div>
-                <div class="data-row"><div class="label">APELLIDOS</div><div class="val">SOUFFRANT</div></div>
-                <div class="data-row"><div class="label">NOMBRES</div><div class="val">ROBES</div></div>
-                <div class="data-row"><div class="label">NACIONALIDAD</div><div class="val">HAITIANA</div></div>
-                <div class="data-row"><div class="label">FECHA DE NACIMIENTO</div><div class="val">10.01.1995</div></div>
+                <div class="field"><div class="label">Nom / Surname</div><div class="val">SOUFFRANT</div></div>
+                <div class="field"><div class="label">Prénom / Given names</div><div class="val">ROBES</div></div>
+                <div class="field"><div class="label">Date de naissance</div><div class="val">10.01.1995</div></div>
+                <div class="field"><div class="label">Nationalité</div><div class="val">HAITI</div></div>
+                <div class="footer-id">RRO-849201</div>
             </div>
         </div>
-        <button class="exit-btn" onclick="lockCard()">DÉCONNECTER</button>
+        <button onclick="location.reload()">FERMER</button>
     </div>
 
     <script>
-        function validateUser() {
+        function validate() {
             if (document.getElementById("userID").value === "12345678" && document.getElementById("userPIN").value === "1234") {
                 document.getElementById("loginInterface").style.display = "none";
                 document.getElementById("cardInterface").style.display = "block";
-            } else { alert("Accès refusé"); }
-        }
-        function lockCard() {
-            document.getElementById("loginInterface").style.display = "block";
-            document.getElementById("cardInterface").style.display = "none";
+            }
         }
     </script>
 </body>
