@@ -4,47 +4,47 @@
     <meta charset="UTF-8">
     <title>RROBLACK FONDATION - ID</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #050505; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: #fff; }
+        body { font-family: 'Arial', sans-serif; background: #e0e0e0; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: #000; }
 
-        .login-card { background: #111; padding: 30px; border-radius: 15px; border: 1px solid #333; text-align: center; width: 300px; }
-        input { width: 90%; padding: 10px; margin: 10px 0; background: #222; border: 1px solid #444; color: white; border-radius: 5px; }
-        .submit-btn { width: 95%; padding: 10px; background: #ff0000; border: none; color: white; cursor: pointer; font-weight: bold; }
+        .login-card { background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #ccc; text-align: center; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #999; border-radius: 3px; }
+        .submit-btn { width: 95%; padding: 10px; background: #333; border: none; color: white; cursor: pointer; font-weight: bold; }
 
         .secure-container { display: none; text-align: center; }
 
-        /* --- STYLE KAT ID CHILI --- */
+        /* --- STYLE KAT ID OFISYÈL (PLEN NÈT) --- */
         .residence-card {
             width: 450px;
             height: 280px;
-            background: linear-gradient(135deg, #1a0000 0%, #000 100%);
-            border-radius: 15px;
+            background: #fff;
+            border-radius: 5px;
             padding: 20px;
-            border: 2px solid #ff0000;
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+            border: 1px solid #000;
             display: flex;
             gap: 20px;
             text-align: left;
+            position: relative;
         }
 
-        .photo-side { width: 120px; }
-        .user-img { width: 120px; height: 150px; border: 2px solid #ff0000; object-fit: cover; }
-        .sign-box { border-top: 1px dashed #ff0000; margin-top: 10px; font-size: 10px; color: #ff0000; text-align: center; padding-top: 5px; }
+        .photo-side { width: 120px; display: flex; flex-direction: column; align-items: center; }
+        .user-img { width: 120px; height: 145px; border: 1px solid #000; background: #f0f0f0; object-fit: cover; }
+        .sign-box { border-bottom: 1px solid #000; margin-top: 15px; width: 100px; font-size: 10px; text-align: center; padding-top: 20px; }
 
         .info-side { flex-grow: 1; }
-        .title-rro { color: #ff0000; font-size: 18px; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #ff0000; }
+        .title-top { font-size: 16px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #000; padding-bottom: 5px; }
         .data-row { margin-bottom: 8px; }
-        .label { font-size: 9px; color: #aaa; text-transform: uppercase; }
-        .val { font-size: 14px; font-weight: bold; }
+        .label { font-size: 10px; color: #555; text-transform: uppercase; font-weight: bold; }
+        .val { font-size: 14px; font-weight: bold; text-transform: uppercase; }
 
-        .exit-btn { margin-top: 20px; background: transparent; border: 1px solid #ff0000; color: #ff0000; padding: 5px 20px; cursor: pointer; }
+        .exit-btn { margin-top: 20px; background: #eee; border: 1px solid #999; color: #333; padding: 5px 20px; cursor: pointer; }
     </style>
 </head>
 <body>
 
     <div class="login-card" id="loginInterface">
         <h2>RROBLACK LOGIN</h2>
-        <input type="text" id="userID" placeholder="ID (12345678)">
-        <input type="password" id="userPIN" placeholder="PIN (1234)">
+        <input type="text" id="userID" placeholder="ID">
+        <input type="password" id="userPIN" placeholder="PIN">
         <button class="submit-btn" onclick="validateUser()">CONNEXION</button>
     </div>
 
@@ -52,18 +52,18 @@
         <div class="residence-card">
             <div class="photo-side">
                 <img class="user-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0TuHToiNWnU1Rbr8ARH2PyhuQf4bHY0DuzbdB2h2vg&s=10" alt="Profile">
-                <div class="sign-box">FIRMA DEL TITULAR</div>
+                <div class="sign-box">FIRMA</div>
             </div>
             <div class="info-side">
-                <div class="title-rro">CÉDULA DE IDENTIDAD - RROBLACK</div>
-                <div class="data-row"><div class="label">N° ROL</div><div class="val">84.920.100-K</div></div>
+                <div class="title-top">RROBLACK FONDATION</div>
+                <div class="data-row"><div class="label">RUN / ROL</div><div class="val">84.920.100-K</div></div>
                 <div class="data-row"><div class="label">APELLIDOS</div><div class="val">SOUFFRANT</div></div>
                 <div class="data-row"><div class="label">NOMBRES</div><div class="val">ROBES</div></div>
                 <div class="data-row"><div class="label">NACIONALIDAD</div><div class="val">HAITIANA</div></div>
                 <div class="data-row"><div class="label">FECHA DE NACIMIENTO</div><div class="val">10.01.1995</div></div>
             </div>
         </div>
-        <button class="exit-btn" onclick="lockCard()">SALIR</button>
+        <button class="exit-btn" onclick="lockCard()">DÉCONNECTER</button>
     </div>
 
     <script>
