@@ -4,60 +4,89 @@
     <meta charset="UTF-8">
     <title>Kat Idantite RROBLACK</title>
     <style>
-        body { font-family: sans-serif; background: #ddd; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        body { 
+            font-family: sans-serif; 
+            background: #222; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        /* Ankadreman ki sanble ak yon telefòn an mòd peyizaj */
+        .phone-frame {
+            width: 800px;
+            height: 450px;
+            background: #000;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            border: 8px solid #333;
+        }
         
         .id-card {
             width: 650px;
-            height: 400px;
+            height: 350px;
             background: #fff;
-            border: 2px solid #333;
             border-radius: 10px;
             padding: 20px;
             position: relative;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
             display: flex;
             gap: 20px;
         }
 
-        /* Drapo Ayiti kòm logo */
         .flag { width: 60px; height: 40px; background: linear-gradient(to bottom, #00209F 50%, #D21034 50%); border: 1px solid #000; }
 
         .header { text-align: center; border-bottom: 2px solid #000; margin-bottom: 15px; }
-        .header h1 { margin: 0; font-size: 22px; text-transform: uppercase; }
+        .header h1 { margin: 0; font-size: 20px; text-transform: uppercase; }
+        .header p { margin: 5px 0 0 0; font-size: 12px; }
         
         .photo-area { width: 180px; text-align: center; }
-        .photo { width: 160px; height: 200px; border: 1px solid #000; background: #eee; }
+        /* Foto a mete la */
+        .photo { 
+            width: 160px; 
+            height: 200px; 
+            border: 1px solid #000; 
+            background: url('https://f4.bcbits.com/img/a2694881193_16.jpg');
+            background-size: cover;
+            background-position: center;
+        }
         
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex-grow: 1; }
-        .field { margin-bottom: 10px; }
-        .label { font-size: 10px; font-weight: bold; color: #555; text-transform: uppercase; }
+        .field { margin-bottom: 8px; }
+        .label { font-size: 9px; font-weight: bold; color: #555; text-transform: uppercase; }
         .val { font-size: 14px; font-weight: bold; border-bottom: 1px solid #ccc; padding: 2px 0; }
     </style>
 </head>
 <body>
 
-<div class="id-card">
-    <div class="photo-area">
-        <div class="flag"></div>
-        <div class="photo" contenteditable="true">Foto isit</div>
-        <div style="margin-top:10px; font-style: italic;" contenteditable="true">Siyati</div>
-    </div>
-    
-    <div style="flex-grow: 1;">
-        <div class="header">
-            <h1>RROBLACK FONDATION</h1>
-            <p>CARTE D'IDENTITÉ / IDENTITY CARD</p>
+<div class="phone-frame">
+    <div class="id-card">
+        <div class="photo-area">
+            <div class="flag"></div>
+            <div class="photo" contenteditable="true"></div>
+            <div style="margin-top:10px; font-style: italic;" contenteditable="true">Robes.S</div>
         </div>
         
-        <div class="info-grid">
-            <div class="field"><div class="label">NOM / SURNAME</div><div class="val" contenteditable="true">SOUFFRANT</div></div>
-            <div class="field"><div class="label">PRÉNOMS / GIVEN NAMES</div><div class="val" contenteditable="true">ROBES</div></div>
-            <div class="field"><div class="label">SEXE</div><div class="val" contenteditable="true">M</div></div>
-            <div class="field"><div class="label">NATIONALITÉ</div><div class="val">HAITIENNE</div></div>
-            <div class="field"><div class="label">DATE DE NAISSANCE</div><div class="val" contenteditable="true">10.01.1995</div></div>
-            <div class="field"><div class="label">N° DU DOCUMENT</div><div class="val" style="color:red;" contenteditable="true">RRO-849201</div></div>
+        <div style="flex-grow: 1;">
+            <div class="header">
+                <h1>RROBLACK FONDATION</h1>
+                <p>CARTE D'IDENTITÉ / IDENTITY CARD</p>
+            </div>
+            
+            <div class="info-grid">
+                <div class="field"><div class="label">NOM / SURNAME</div><div class="val" contenteditable="true">SOUFFRANT</div></div>
+                <div class="field"><div class="label">PRÉNOMS / GIVEN NAMES</div><div class="val" contenteditable="true">ROBES</div></div>
+                <div class="field"><div class="label">SEXE</div><div class="val" contenteditable="true">M</div></div>
+                <div class="field"><div class="label">NATIONALITÉ</div><div class="val">HAITIENNE</div></div>
+                <div class="field"><div class="label">DATE DE NAISSANCE</div><div class="val" contenteditable="true">10.01.1995</div></div>
+                <div class="field"><div class="label">N° DU DOCUMENT</div><div class="val" style="color:red;" contenteditable="true">RRO-849201</div></div>
+            </div>
+            <div class="flag" style="margin-left: auto;"></div>
         </div>
-        <div class="flag" style="margin-left: auto;"></div>
     </div>
 </div>
 
