@@ -1,88 +1,291 @@
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Kat Idantite RROBLACK</title>
-    <style>
-        body { 
-            font-family: sans-serif; 
-            background: #222; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kat Rezidans Ofisyèl</title>
 
-        /* Ankadreman telefòn an mòd pòtrè */
-        .phone-frame {
-            width: 400px;
-            height: 750px;
-            background: #000;
-            border-radius: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
-            border: 8px solid #333;
-        }
-        
-        .id-card {
-            width: 330px;
-            height: 550px;
-            background: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Segoe UI, sans-serif;
+    background: radial-gradient(circle, #1e272e 0%, #0f141c 100%);
+    color:#fff;
+}
 
-        .flag { width: 60px; height: 40px; background: linear-gradient(to bottom, #00209F 50%, #D21034 50%); border: 1px solid #000; }
+/* ==== LOGIN (MODERN GLASS LIKE CARD) ==== */
+.login-card{
+    width:360px;
+    padding:35px;
+    border-radius:20px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(14px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+    text-align:center;
+}
 
-        .header { text-align: center; border-bottom: 2px solid #000; width: 100%; }
-        .header h1 { margin: 0; font-size: 18px; text-transform: uppercase; }
-        .header p { margin: 2px 0 5px 0; font-size: 10px; }
-        
-        .photo { 
-            width: 160px; 
-            height: 200px; 
-            border: 1px solid #000; 
-            background: url('https://f4.bcbits.com/img/a2694881193_16.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .info-grid { display: grid; grid-template-columns: 1fr; gap: 10px; width: 100%; }
-        .field { margin-bottom: 5px; }
-        .label { font-size: 9px; font-weight: bold; color: #555; text-transform: uppercase; }
-        .val { font-size: 13px; font-weight: bold; border-bottom: 1px solid #ccc; padding: 2px 0; }
-    </style>
+.login-card h2{
+    margin-bottom:5px;
+    font-size:24px;
+    background:linear-gradient(45deg,#00d2ff,#3a7bd5);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:1px;
+}
+
+.login-card p{
+    font-size:12px;
+    color:#8a99ad;
+    margin-bottom:20px;
+}
+
+.input-box{
+    text-align:left;
+    margin-bottom:15px;
+}
+
+.input-box label{
+    font-size:10px;
+    color:#3a7bd5;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:rgba(255,255,255,0.05);
+    color:#fff;
+    outline:none;
+    transition:0.3s;
+}
+
+.input-box input:focus{
+    border-color:#00d2ff;
+    box-shadow:0 0 10px rgba(0,210,255,0.3);
+}
+
+.submit-btn{
+    width:100%;
+    padding:13px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#fff;
+    background:linear-gradient(45deg,#00d2ff,#3a7bd5);
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-2px);
+    opacity:0.9;
+}
+
+.error-txt{
+    color:#ff4d4d;
+    margin-top:10px;
+    display:none;
+    font-size:12px;
+}
+
+/* ==== CARD SECTION ==== */
+.secure-container{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.residence-card{
+    width:540px;
+    height:320px;
+    background:linear-gradient(135deg,#fff,#e3e9ed);
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+    padding:25px;
+    color:#1e272e;
+    position:relative;
+}
+
+.residence-card::before{
+    content:"RÉSIDENT PERMANENT";
+    position:absolute;
+    font-size:45px;
+    font-weight:900;
+    opacity:0.05;
+    transform:rotate(-20deg);
+    top:35%;
+    left:5%;
+}
+
+.card-header{
+    text-align:center;
+    border-bottom:3px double #2c3e50;
+    padding-bottom:10px;
+    margin-bottom:20px;
+}
+
+.card-header h1{
+    font-size:16px;
+    margin:0;
+    text-transform:uppercase;
+}
+
+.card-header h2{
+    font-size:12px;
+    color:#3a7bd5;
+}
+
+.card-body{
+    display:flex;
+    gap:20px;
+}
+
+.user-img{
+    width:120px;
+    height:145px;
+    object-fit:cover;
+    border-radius:8px;
+    border:2px solid #2c3e50;
+}
+
+.field-title{
+    font-size:9px;
+    color:#7f8c8d;
+    text-transform:uppercase;
+}
+
+.field-value{
+    font-weight:bold;
+    text-transform:uppercase;
+    font-size:14px;
+}
+
+.card-footer{
+    position:absolute;
+    bottom:15px;
+    left:25px;
+    right:25px;
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+}
+
+.exit-btn{
+    padding:10px 18px;
+    border-radius:8px;
+    border:1px solid rgba(255,77,77,0.3);
+    background:transparent;
+    color:#ff4d4d;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.exit-btn:hover{
+    background:#ff4d4d;
+    color:#fff;
+}
+
+.id-number{
+    font-family:monospace;
+    color:#ff4757;
+    font-weight:bold;
+}
+</style>
 </head>
+
 <body>
 
-<div class="phone-frame">
-    <div class="id-card">
-        <div class="header">
-            <h1>RROBLACK FONDATION</h1>
-            <p>CARTE D'IDENTITÉ / IDENTITY CARD</p>
-        </div>
-        
-        <div class="flag"></div>
-        <div class="photo" contenteditable="true"></div>
-        <div style="font-style: italic; font-size: 12px;" contenteditable="true">Robes.S</div>
-        
-        <div class="info-grid">
-            <div class="field"><div class="label">NOM / SURNAME</div><div class="val" contenteditable="true">SOUFFRANT</div></div>
-            <div class="field"><div class="label">PRÉNOMS / GIVEN NAMES</div><div class="val" contenteditable="true">ROBES</div></div>
-            <div class="field"><div class="label">SEXE</div><div class="val" contenteditable="true">M</div></div>
-            <div class="field"><div class="label">NATIONALITÉ</div><div class="val">HAITIENNE</div></div>
-            <div class="field"><div class="label">DATE DE NAISSANCE</div><div class="val" contenteditable="true">10.01.1995</div></div>
-            <div class="field"><div class="label">N° DU DOCUMENT</div><div class="val" style="color:red;" contenteditable="true">RRO-849201</div></div>
-        </div>
+<!-- LOGIN -->
+<div class="login-card" id="loginInterface">
+    <h2>Espas Sekirize</h2>
+    <p>Antre ID + Modpas pou aksè</p>
+
+    <div class="input-box">
+        <label>ID ITILIZATÈ</label>
+        <input type="text" id="userID">
     </div>
+
+    <div class="input-box">
+        <label>MODPAS</label>
+        <input type="password" id="userPIN">
+    </div>
+
+    <button class="submit-btn" onclick="validateUser()">KONEKTE</button>
+    <div class="error-txt" id="errorMessage">ID oswa modpas pa kòrèk</div>
 </div>
+
+<!-- CARD -->
+<div class="secure-container" id="cardInterface">
+    <div class="residence-card">
+
+        <div class="card-header">
+            <h1>République Démocratique du Congo</h1>
+            <h2>CARTE DE RÉSIDENCE</h2>
+        </div>
+
+        <div class="card-body">
+            <img class="user-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0TuHToiNWnU1Rbr8ARH2PyhuQf4bHY0DuzbdB2h2vg&s=10">
+
+            <div>
+                <div>
+                    <div class="field-title">Nom</div>
+                    <div class="field-value">SOUFFRANT</div>
+                </div>
+
+                <div>
+                    <div class="field-title">Prénom</div>
+                    <div class="field-value">Robes</div>
+                </div>
+
+                <div>
+                    <div class="field-title">Nationalité</div>
+                    <div class="field-value">HT</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <div>Expire: 02/06/2028</div>
+            <div class="id-number">RE-849201-HT</div>
+        </div>
+
+    </div>
+
+    <button class="exit-btn" onclick="lockCard()">Dekonekte</button>
+</div>
+
+<script>
+function validateUser(){
+    const id = document.getElementById("userID").value;
+    const pin = document.getElementById("userPIN").value;
+
+    if(id === "12345678" && pin === "1234"){
+        document.getElementById("loginInterface").style.display="none";
+        document.getElementById("cardInterface").style.display="flex";
+        document.getElementById("errorMessage").style.display="none";
+    }else{
+        document.getElementById("errorMessage").style.display="block";
+    }
+}
+
+function lockCard(){
+    document.getElementById("userID").value="";
+    document.getElementById("userPIN").value="";
+    document.getElementById("cardInterface").style.display="none";
+    document.getElementById("loginInterface").style.display="block";
+}
+</script>
 
 </body>
 </html>
