@@ -1,78 +1,65 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ht">
 <head>
     <meta charset="UTF-8">
-    <title>RROBLACK FONDATION - ID</title>
+    <title>Kat Idantite RROBLACK</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #e0e0e0; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-
-        .secure-container { display: none; }
-
-        /* --- STYLE KAT 1000002724.webp --- */
-        .residence-card {
-            width: 600px;
-            height: 380px;
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6eef5 100%);
-            border-radius: 12px;
-            padding: 25px;
-            border: 2px solid #b0c4de;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        body { font-family: sans-serif; background: #ddd; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        
+        .id-card {
+            width: 650px;
+            height: 400px;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
             position: relative;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
             display: flex;
             gap: 20px;
-            color: #2c3e50;
-            overflow: hidden;
         }
 
-        .header-top { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1a2a6c; margin-bottom: 15px; }
-        .republique { font-size: 22px; font-weight: bold; color: #1a2a6c; text-transform: uppercase; }
-        
-        .photo-side { width: 180px; }
-        .user-img { width: 170px; height: 210px; border: 1px solid #999; object-fit: cover; }
-        .sign-area { margin-top: 10px; font-family: 'Cursive', sans-serif; font-size: 20px; color: #333; }
+        /* Drapo Ayiti kòm logo */
+        .flag { width: 60px; height: 40px; background: linear-gradient(to bottom, #00209F 50%, #D21034 50%); border: 1px solid #000; }
 
-        .info-side { flex-grow: 1; }
-        .field { margin-bottom: 12px; }
-        .label { font-size: 10px; color: #555; text-transform: uppercase; font-weight: bold; }
-        .val { font-size: 16px; font-weight: bold; text-transform: uppercase; }
+        .header { text-align: center; border-bottom: 2px solid #000; margin-bottom: 15px; }
+        .header h1 { margin: 0; font-size: 22px; text-transform: uppercase; }
         
-        .footer-id { position: absolute; bottom: 20px; right: 30px; font-size: 20px; font-weight: bold; }
+        .photo-area { width: 180px; text-align: center; }
+        .photo { width: 160px; height: 200px; border: 1px solid #000; background: #eee; }
+        
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex-grow: 1; }
+        .field { margin-bottom: 10px; }
+        .label { font-size: 10px; font-weight: bold; color: #555; text-transform: uppercase; }
+        .val { font-size: 14px; font-weight: bold; border-bottom: 1px solid #ccc; padding: 2px 0; }
     </style>
 </head>
 <body>
 
-    <!-- Seksyon login rete menm jan an -->
-    <div id="loginInterface">
-        <input type="text" id="userID" placeholder="ID">
-        <input type="password" id="userPIN" placeholder="PIN">
-        <button onclick="validate()">CONNEXION</button>
+<div class="id-card">
+    <div class="photo-area">
+        <div class="flag"></div>
+        <div class="photo" contenteditable="true">Foto isit</div>
+        <div style="margin-top:10px; font-style: italic;" contenteditable="true">Siyati</div>
     </div>
-
-    <div class="secure-container" id="cardInterface" style="display: block;">
-        <div class="residence-card">
-            <div class="photo-side">
-                <div class="republique">RROBLACK FONDATION</div>
-                <img class="user-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0TuHToiNWnU1Rbr8ARH2PyhuQf4bHY0DuzbdB2h2vg&s=10">
-                <div class="sign-area">Robes.S</div>
-            </div>
-            <div class="info-side">
-                <div class="field"><div class="label">Nom / Surname</div><div class="val">SOUFFRANT</div></div>
-                <div class="field"><div class="label">Prénom / Given names</div><div class="val">ROBES</div></div>
-                <div class="field"><div class="label">Date de naissance</div><div class="val">10.01.1995</div></div>
-                <div class="field"><div class="label">Nationalité</div><div class="val">HAITI</div></div>
-                <div class="footer-id">RRO-849201</div>
-            </div>
+    
+    <div style="flex-grow: 1;">
+        <div class="header">
+            <h1>RROBLACK FONDATION</h1>
+            <p>CARTE D'IDENTITÉ / IDENTITY CARD</p>
         </div>
-        <button onclick="location.reload()">FERMER</button>
+        
+        <div class="info-grid">
+            <div class="field"><div class="label">NOM / SURNAME</div><div class="val" contenteditable="true">SOUFFRANT</div></div>
+            <div class="field"><div class="label">PRÉNOMS / GIVEN NAMES</div><div class="val" contenteditable="true">ROBES</div></div>
+            <div class="field"><div class="label">SEXE</div><div class="val" contenteditable="true">M</div></div>
+            <div class="field"><div class="label">NATIONALITÉ</div><div class="val">HAITIENNE</div></div>
+            <div class="field"><div class="label">DATE DE NAISSANCE</div><div class="val" contenteditable="true">10.01.1995</div></div>
+            <div class="field"><div class="label">N° DU DOCUMENT</div><div class="val" style="color:red;" contenteditable="true">RRO-849201</div></div>
+        </div>
+        <div class="flag" style="margin-left: auto;"></div>
     </div>
+</div>
 
-    <script>
-        function validate() {
-            if (document.getElementById("userID").value === "12345678" && document.getElementById("userPIN").value === "1234") {
-                document.getElementById("loginInterface").style.display = "none";
-                document.getElementById("cardInterface").style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
