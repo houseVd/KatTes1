@@ -2,126 +2,68 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>RROBLACK FONDATION - Accès</title>
+    <title>RROBLACK FONDATION - ID</title>
     <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #050505;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #fff;
-        }
+        body { font-family: 'Segoe UI', sans-serif; background: #050505; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: #fff; }
 
-        /* --- LOGO / STYLE RROBLACK --- */
-        .login-card {
-            background: #111;
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid #333;
-            text-align: center;
-            width: 300px;
-        }
+        .login-card { background: #111; padding: 30px; border-radius: 15px; border: 1px solid #333; text-align: center; width: 300px; }
+        input { width: 90%; padding: 10px; margin: 10px 0; background: #222; border: 1px solid #444; color: white; border-radius: 5px; }
+        .submit-btn { width: 95%; padding: 10px; background: #ff0000; border: none; color: white; cursor: pointer; font-weight: bold; }
 
-        .input-box input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            background: #222;
-            border: 1px solid #444;
-            color: white;
-            border-radius: 5px;
-        }
+        .secure-container { display: none; text-align: center; }
 
-        .submit-btn {
-            width: 100%;
-            padding: 10px;
-            background: #ff0000;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* --- KAT VÈTIKAL AVÈK EFÈ NÉON --- */
-        .secure-container { display: none; }
-
+        /* --- STYLE KAT ID CHILI --- */
         .residence-card {
-            width: 320px;
-            height: 500px;
-            background: linear-gradient(180deg, #0a0a0a 0%, #1a0000 100%);
-            border-radius: 20px;
+            width: 450px;
+            height: 280px;
+            background: linear-gradient(135deg, #1a0000 0%, #000 100%);
+            border-radius: 15px;
             padding: 20px;
-            position: relative;
             border: 2px solid #ff0000;
-            /* Efè Néon */
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4), inset 0 0 10px rgba(255, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        .rro-header {
-            font-size: 24px;
-            font-weight: 900;
-            color: #ff0000;
-            text-shadow: 0 0 10px #ff0000;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ff0000;
-            padding-bottom: 10px;
-        }
-
-        .user-img {
-            width: 150px;
-            height: 180px;
-            border: 2px solid #ff0000;
-            margin-bottom: 15px;
-            filter: grayscale(100%) contrast(1.2);
-        }
-
-        .info-group {
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+            display: flex;
+            gap: 20px;
             text-align: left;
-            margin-top: 15px;
         }
 
-        .label { font-size: 10px; color: #ff0000; text-transform: uppercase; }
-        .val { font-size: 16px; font-weight: bold; margin-bottom: 10px; display: block; }
+        .photo-side { width: 120px; }
+        .user-img { width: 120px; height: 150px; border: 2px solid #ff0000; object-fit: cover; }
+        .sign-box { border-top: 1px dashed #ff0000; margin-top: 10px; font-size: 10px; color: #ff0000; text-align: center; padding-top: 5px; }
 
-        .exit-btn {
-            margin-top: 20px;
-            background: transparent;
-            border: 1px solid #ff0000;
-            color: #ff0000;
-            padding: 5px 15px;
-            cursor: pointer;
-        }
+        .info-side { flex-grow: 1; }
+        .title-rro { color: #ff0000; font-size: 18px; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #ff0000; }
+        .data-row { margin-bottom: 8px; }
+        .label { font-size: 9px; color: #aaa; text-transform: uppercase; }
+        .val { font-size: 14px; font-weight: bold; }
+
+        .exit-btn { margin-top: 20px; background: transparent; border: 1px solid #ff0000; color: #ff0000; padding: 5px 20px; cursor: pointer; }
     </style>
 </head>
 <body>
 
     <div class="login-card" id="loginInterface">
         <h2>RROBLACK LOGIN</h2>
-        <input type="text" id="userID" placeholder="ID">
-        <input type="password" id="userPIN" placeholder="PIN">
+        <input type="text" id="userID" placeholder="ID (12345678)">
+        <input type="password" id="userPIN" placeholder="PIN (1234)">
         <button class="submit-btn" onclick="validateUser()">CONNEXION</button>
-        <div id="errorMessage" style="color:red; display:none; margin-top:10px;">Accès Refusé</div>
     </div>
 
     <div class="secure-container" id="cardInterface">
         <div class="residence-card">
-            <div class="rro-header">RROBLACK FOUNDATION</div>
-            <img class="user-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0TuHToiNWnU1Rbr8ARH2PyhuQf4bHY0DuzbdB2h2vg&s=10" alt="Profile">
-            
-            <div class="info-group">
-                <span class="label">Identity</span>
-                <span class="val">SOUFFRANT, Robes</span>
-                <span class="label">Status</span>
-                <span class="val" style="color: #ff0000;">PERMANENT MEMBER</span>
-                <span class="label">ID Number</span>
-                <span class="val">RRO-849201-HT</span>
+            <div class="photo-side">
+                <img class="user-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0TuHToiNWnU1Rbr8ARH2PyhuQf4bHY0DuzbdB2h2vg&s=10" alt="Profile">
+                <div class="sign-box">FIRMA DEL TITULAR</div>
+            </div>
+            <div class="info-side">
+                <div class="title-rro">CÉDULA DE IDENTIDAD - RROBLACK</div>
+                <div class="data-row"><div class="label">N° ROL</div><div class="val">84.920.100-K</div></div>
+                <div class="data-row"><div class="label">APELLIDOS</div><div class="val">SOUFFRANT</div></div>
+                <div class="data-row"><div class="label">NOMBRES</div><div class="val">ROBES</div></div>
+                <div class="data-row"><div class="label">NACIONALIDAD</div><div class="val">HAITIANA</div></div>
+                <div class="data-row"><div class="label">FECHA DE NACIMIENTO</div><div class="val">10.01.1995</div></div>
             </div>
         </div>
-        <center><button class="exit-btn" onclick="lockCard()">DÉCONNECTER</button></center>
+        <button class="exit-btn" onclick="lockCard()">SALIR</button>
     </div>
 
     <script>
@@ -129,9 +71,7 @@
             if (document.getElementById("userID").value === "12345678" && document.getElementById("userPIN").value === "1234") {
                 document.getElementById("loginInterface").style.display = "none";
                 document.getElementById("cardInterface").style.display = "block";
-            } else {
-                document.getElementById("errorMessage").style.display = "block";
-            }
+            } else { alert("Accès refusé"); }
         }
         function lockCard() {
             document.getElementById("loginInterface").style.display = "block";
