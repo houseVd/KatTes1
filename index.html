@@ -17,7 +17,7 @@ body{
     color:#fff;
 }
 
-/* ================= LOGIN ================= */
+/* LOGIN */
 .login-card{
     width:360px;
     padding:35px;
@@ -86,7 +86,7 @@ body{
     margin-top:10px;
 }
 
-/* ================= CARD / ESPAS SEKIRITE ================= */
+/* CARD SECTION */
 .secure-container{
     display:none;
     flex-direction:column;
@@ -94,6 +94,7 @@ body{
     gap:20px;
 }
 
+/* CARD */
 .residence-card{
     width:560px;
     height:330px;
@@ -141,20 +142,24 @@ body{
     letter-spacing:3px;
 }
 
-/* BODY */
+/* BODY (AJISTE POZISYON) */
 .card-body{
     display:flex;
     gap:20px;
+    align-items:flex-start; /* 🔥 AJISTE POZISYON */
 }
 
+/* PORTRAIT IMAGE FIX */
 .user-img{
     width:120px;
     height:145px;
     object-fit:cover;
+    object-position:top; /* 🔥 pou potrè pi klè */
     border-radius:12px;
     border:2px solid rgba(0,210,255,0.5);
 }
 
+/* TEXT */
 .field-title{
     font-size:9px;
     color:#00d2ff;
@@ -168,6 +173,7 @@ body{
     color:#fff;
 }
 
+/* FOOTER */
 .card-footer{
     position:absolute;
     bottom:15px;
